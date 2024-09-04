@@ -1,0 +1,45 @@
+import React from 'react';
+import { View, Text, StyleSheet } from 'react-native';
+
+export default function LeaderboardScreen() {
+  const styles = getStyles();
+
+  const leaderboardData = [
+    { name: 'ShadowHunter42', earnings: `$${(Math.random() * (350 - 300) + 300).toFixed(2)}` },
+    { name: 'JaneDoe', earnings: `$${(Math.random() * (350 - 300) + 300).toFixed(2)}` },
+    { name: 'MysticWarrior21', earnings: `$${(Math.random() * (350 - 300) + 300).toFixed(2)}` },
+    { name: 'ChrisBrown', earnings: `$${(Math.random() * (350 - 300) + 300).toFixed(2)}` },
+    { name: 'CyberNinja77', earnings: `$${(Math.random() * (350 - 300) + 300).toFixed(2)}` },
+    { name: 'EmilyClark', earnings: `$${(Math.random() * (350 - 300) + 300).toFixed(2)}` },
+    { name: 'StormRider56', earnings: `$${(Math.random() * (350 - 300) + 300).toFixed(2)}` },
+    { name: 'DavidWilson', earnings: `$${(Math.random() * (350 - 300) + 300).toFixed(2)}` },
+    { name: 'TitanCrusher64', earnings: `$${(Math.random() * (350 - 300) + 300).toFixed(2)}` },
+    { name: 'LauraTaylor', earnings: `$${(Math.random() * (350 - 300) + 300).toFixed(2)}` }
+  ];
+
+  return (
+    <View style={styles.container}>
+      {leaderboardData.map((user, index) => (
+        <Text key={index} style={styles.text}>
+          {user.name}: {user.earnings}
+        </Text>
+      ))}
+    </View>
+  );
+}
+
+function getStyles() {
+  return StyleSheet.create({
+    container: {
+      flex: 1,
+      justifyContent: 'center',
+      alignItems: 'center',
+      backgroundColor: '#00a2ed', // Light blue background
+    },
+    text: {
+      color: '#000', // Black text color
+      fontSize: 24, // Larger text size
+      fontFamily: 'serif', // More elegant font
+    },
+  });
+}
